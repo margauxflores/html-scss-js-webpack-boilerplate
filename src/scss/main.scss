@@ -1,0 +1,13 @@
+@import 'partials/normalize.scss';
+@import 'partials/reset.scss';
+@import 'partials/variables.scss';
+@import 'partials/mixins.scss';
+
+html {
+  font-size: 10px;
+  width: 100%;
+}
+
+body {
+  font-size: 1.6rem;
+}

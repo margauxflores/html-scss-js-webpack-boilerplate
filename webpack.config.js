@@ -6,6 +6,7 @@ const HtmlReplaceWebpackPlugin = require('html-replace-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 let entries = {};
 
@@ -116,6 +117,14 @@ module.exports = {
     }),
     new StyleLintPlugin({
       configFile: '.stylelintrc'
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: 'src/assets/**/*.*',
+          to: 'assets/[name].[ext]'
+        }
+      ]
     })
   ]
 }
